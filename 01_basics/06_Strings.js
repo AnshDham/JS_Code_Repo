@@ -44,7 +44,9 @@ console.log(`My name is ${name} and I am ${age} years old.`);
 // Conversion of String into an StringObject.
 // Use of Syntax => new String()
 /*
-// We can convert Strings into an Object as well using Syntax => new String() → creates a String object.Eg:
+// We can convert Strings into an Object as well using Syntax => new String() → creates a String object.
+// Remember => "S" in "new String()" must always be CAPITAL LETTER while creating StringObject.
+// Eg:
 const gameNameinString = String('hitesh-hc-com')
 console.log("typeof gameNameinString was originally a",typeof gameNameinString)
 // Output will be : string
