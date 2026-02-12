@@ -237,8 +237,35 @@ console.log(`The date in YYYY-MM-DD Format is =>`,dateFromString1, `where month 
 // IMPORTANT NOTE:
 // +++++++++++++++++++++++++++++++++++++++++++++
 
-// => JavaScript का Date constructor "DD-MM-YYYY" format को नहीं समझता।
-// => तुम्हें "YYYY-MM-DD" या "MM/DD/YYYY" format देना होगा, या फिर string को manually parse करना होगा।
+// => JavaScript का Date constructor "DD-MM-YYYY" format को नहीं समझता। Eg:
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Date from string in DD-MM-YYYY Format:
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+const dateinDDMMYYYY = new Date("20-01-2025");
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+console.log("The date in DD-MM-YYYY Format is =>",dateinDDMMYYYY);
+// Output => The date in DD-MM-YYYY Format is => Invalid Date
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+console.log("The date in DD-MM-YYYY Format in .toLocaleString() is =>", dateinDDMMYYYY.toLocaleString());
+// Output => The date in DD-MM-YYYY Format in .toLocaleString() is => Invalid Date
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+console.log(`The date in DD-MM-YYYY Format is =>`,dateinDDMMYYYY, `where month is ${dateinDDMMYYYY.getMonth() + 1} and Date is ${dateinDDMMYYYY.getDate()} and Year is ${dateinDDMMYYYY.getFullYear()}`);
+
+// Output => The date in DD-MM-YYYY Format is => Invalid Date where month is NaN and Date is NaN and Year is NaN.
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// => तो तुम्हें "YYYY-MM-DD" या "MM/DD/YYYY" format देना होगा, या फिर string को manually parse करना होगा।
 
 // +++++++++++++++++++++++++++++++++++++++++++++
 
@@ -260,7 +287,7 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // +++++++++++++++++++++++++++++++++++++++++++++
 
 // ++++++++++++
-/* // => LineNO: 263
+/* // => LineNO: 290
 // ++++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++++
@@ -318,7 +345,7 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // +++++++++++++++++++++++++++++++++++++++++++++
 
 // ++++++++++++
-*/ // => LineNO: 263
+*/ // => LineNO: 290
 // ++++++++++++ 
 
 // +++++++++++++++++++++++++++++++++++++++++++++
@@ -343,7 +370,7 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // +++++++++++++++++++++++++++++++++++++++++++++
 
 // ++++++++++++
-/* // => LineNO: 346
+/* // => LineNO: 373
 // ++++++++++++
  
 // +++++++++++++++++++++++++++++++++++++++++++++
@@ -369,12 +396,47 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // => लेकिन तुम toLocaleDateString() या libraries (जैसे Day.js, Moment.js) use करके format customize कर सकते हो:
 // +++++++++++++++++++++++++++++++++++++++++++++
 
+// => जब हम किसी specific date string से new Date("...") बनाते हैं, तो JavaScript उसे internally machine-readable format में रखता है।
+
+// => Default methods जैसे .toString() या सीधे console.log(date) करने पर output थोड़ा technical और unreadable लगता है: यह format developer-oriented है, user-friendly नहीं।
+
+// => बेहतर तरीका:=> [ .toLocaleString() ]
+
+// => अगर हमें date को human-readable बनाना है, तो =>
+// [ .toLocaleString() ] या [ .toLocaleDateString() ] use करना चाहिए।
+// => ये methods locale (language/region) के हिसाब से date को format करते हैं: Eg:
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// .toString() → Always outputs in a fixed format: i.e.:
+
+// => DayOfWeek Month Day Year HH:MM:SS GMT+Offset (TimeZone)  
+// Example: Sat May 20 2023 00:00:00 GMT+0530 (India Standard Time)
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// .toLocaleString() → Output depends on your locale.
+
+// Example:
+
+// en-US → 1/20/2025, 12:00:00 AM (MM/DD/YYYY)
+
+// en-GB → 20/01/2025, 00:00:00 (DD/MM/YYYY)
+
+// en-IN → 20/1/2025, 12:00:00 am (DD/MM/YYYY, single-digit month/day)
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// So if you use .toLocaleString(), JavaScript formats the date based on your system’s locale settings.
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 // +++++++++++
-*/ // => LineNO: 346
+*/ // => LineNO: 373
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 377
+/* // => LineNO: 439
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++++
@@ -385,11 +447,11 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // +++++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 377
+*/ // => LineNO: 439
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 392
+/* // => LineNO: 454
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++++
@@ -421,7 +483,7 @@ const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
 // +++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 392
+*/ // => LineNO: 454
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++
@@ -451,7 +513,7 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 // +++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-/* // => LineNO: 454
+/* // => LineNO: 516
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++
@@ -466,7 +528,30 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 
 // लेकिन "MM-DD-YYYY" (hyphen - वाला format) standard नहीं है।
 
-// JS कभी-कभी इसे गलत तरीके से interpret कर देता है।
+// "MM-DD-YYYY" → ये कभी-कभी काम करता है, लेकिन unreliable है, इसे avoid करना चाहिए। Eg:
+
+// ++++++++++++++++++++++++++++++++++++++++++++
+// Date from string in MM-DD-YYYY Format with hyphen(-):
+// ++++++++++++++++++++++++++++++++++++++++++++
+
+// const dateinMMDDYYYY = new Date("01-20-2025");
+// console.log("The date in MM-DD-YYYY Format is =>",dateinMMDDYYYY);
+// Output => The date in MM-DD-YYYY Format is => 2025-01-19T18:30:00.000Z
+
+// ++++++++++++++++++++++++++++++++++++++++++++
+
+// console.log("The date in MM-DD-YYYY Format in .toLocaleString() is =>", dateinMMDDYYYY.toLocaleString());
+// Output => The date in MM-DD-YYYY Format in .toLocaleString() is => 20/1/2025, 12:00:00 am
+
+// ++++++++++++++++++++++++++++++++++++++++++++
+
+// console.log(`The date in MM-DD-YYYY Format is =>`,dateinMMDDYYYY, `where month is ${dateinMMDDYYYY.getMonth() + 1} and Date is ${dateinMMDDYYYY.getDate()} and Year is ${dateinMMDDYYYY.getFullYear()}`);
+
+// Output => The date in MM-DD-YYYY Format is => 2025-01-19T18:30:00.000Z where month is 1 and Date is 20 and Year is 2025
+
+// ++++++++++++++++++++++++++++++++++++++++++++
+
+// लेकिन JS कभी-कभी इसे ["MM-DD-YYYY" (hyphen - वाला format)] को, गलत तरीके से interpret कर देता है।
 
 // Example: "05-20-2023" को कुछ browsers सही पढ़ लेंगे, लेकिन "20-05-2023" in "DD-MM-YYYY Format" या "MM-DD-YYYY" में hyphen होने पर parsing गड़बड़ा सकती है।
 
@@ -479,7 +564,7 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 // +++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 454
+*/ // => LineNO: 516
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++
@@ -517,7 +602,7 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 // +++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-/* // => LineNO: 520
+/* // => LineNO: 605
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++
@@ -535,11 +620,11 @@ console.log("Is dateA === dateB?", dateA === dateB); // Output => false (compare
 // +++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 520
+*/ // => LineNO: 605
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 542
+/* // => LineNO: 627
 // +++++++++++
 
 // ++++++++++++++++++++++++++++++++++++++++++
@@ -571,11 +656,11 @@ if (myCreatedDate.getTime() < nowDate.getTime()) {
 // +++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 542
+*/ // => LineNO: 627
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 578
+/* // => LineNO: 663
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++
@@ -589,11 +674,11 @@ console.log("Current Timestamp is =>",currentTimestamp);
 // +++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 578
+*/ // => LineNO: 663
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 596
+/* // => LineNO: 681
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++
@@ -607,11 +692,11 @@ console.log("Date is =>",todayDate.getDate()); // Output => Date is => 11
 // +++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 596
+*/ // => LineNO: 681
 // +++++++++++
 
 // +++++++++++
-/* // => LineNO: 614
+/* // => LineNO: 699
 // +++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++
@@ -627,7 +712,7 @@ console.log("Updated Date is =>",todayDate);
 // +++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++
-*/ // => LineNO: 614
+*/ // => LineNO: 699
 // +++++++++++  
 
 // +++++++++++++++++++++++++++++++++++++++++
