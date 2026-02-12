@@ -13,49 +13,64 @@ console.log("typeof todayDate is =>",typeof todayDate);
 // Since our Variable "todayDate" is a DateObject.
 // Therefore lets explore properties attached to it, like expressing today's date in Different-Different Format. Eg:
 
-/*
+// ++++++++++
+/* // => LineNO: 17 
+// ++++++++++
 
+// +++++++++++++++++++++++++++++++++++++++++++++
 console.log(todayDate.toString());
 // Output => Wed Feb 11 2026 14:10:44 GMT+0000 (Coordinated Universal Time)
-
+// +++++++++++++++++++++++++++++++++++++++++++++
 console.log(todayDate.toDateString());
 // Output => Wed Feb 11 2026
-
+// +++++++++++++++++++++++++++++++++++++++++++++
 console.log(todayDate.toLocaleString());
 // Output => 2/11/2026, 2:10:44 PM
 // => Here while dispaying Dates, it was January = 1, February = 2, March = 3 … December = 12.
-
+// +++++++++++++++++++++++++++++++++++++++++++++
 console.log(todayDate.toLocaleDateString());
 // Output => 2/11/2026
 // => Here while dispaying Dates, it was January = 1, February = 2, March = 3 … December = 12.
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-*/
+// ++++++++++
+*/ // => LineNO:17
+// ++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++
+/* // => LineNO: 41
+// ++++++++++
 
-/* Important Note:
+// +++++++++++++++++++++++++++++++++++++++++++++++
+// Important Note:
+// ++++++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// जब JavaScript date को display करता है (toLocaleString() या toString()), तो month हमेशा 1 से शुरू होता है।
+// => जब JavaScript date को display करता है (toLocaleString() या toString()), तो month हमेशा 1 से शुरू होता है।
 // यानी January = 1, February = 2, March = 3 … December = 12.
 
-// लेकिन जब तुम methods जैसे getMonth() use करते हो, तो JavaScript internally month को 0-based index में रखता है।
+// => लेकिन जब तुम methods जैसे getMonth() use करते हो, तो JavaScript internally month को 0-based index में रखता है।
 // यानी January = 0, February = 1, March = 2 … December = 11.
+// +++++++++++++++++++++++++++++++++++++++++++++++
 
-*/
+// ++++++++++
+*/ // => LineNO: 41
+// ++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++
+/* // => LineNO: 60
+// ++++++++++
 
-// We can also customise the output we received using "some properties" of Date Object. Eg:
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+// We can also customise the representation of date output we received using "some properties" of Date Object. Eg:
+// ++++++++++++++++++++++++++++++++++++++++++++++++
 // Syntax => NameOfdateObject.property ('Internationalisation', {Object Key-Value Pairs});
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// and we can define what we want in Object, simply press (Ctrl+Space) to receive all the suggestions, Thanks to VS Code Intellisense. Eg:
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+// and we can define what we want in Object, simply press (Ctrl+Space) to receive all the suggestions, All Thanks to VS Code Intellisense. Eg:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-/*
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Eg: Using .toLocaleString('locale', {options})
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 const customDate1 = todayDate.toLocaleString('default', {
     weekday: "long",
@@ -63,156 +78,385 @@ const customDate1 = todayDate.toLocaleString('default', {
     dayPeriod: "narrow", // And etc. whatever you want.
     year: "numeric",
     month: "long",
-    day: "numeric",
-    
+    day: "numeric",    
 })
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 console.log("Our customized Date1 is =>",customDate1);
 // Output => Our customized Date1 is => Wednesday, February 11, 2026 at in the afternoon.
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 // Earlier output was => console.log(todayDate.toLocaleString());
 // Earlier Output => 2/11/2026, 2:10:44 PM 
+
 // => Here while dispaying Dates, it was January = 1, February = 2, March = 3 … December = 12.
 
-*/
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++
+*/ // => LineNO: 60
+// ++++++++++
 
-/* IMPORTANT NOTE:
+// ++++++++++
+/* // => LineNO: 103
+// ++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++
+// IMPORTANT NOTE:
+// ++++++++++++++++++++++++++++++++++++++++++++++
 
-// => Date.prototype.toString() 
+// =>        Date.prototype.toString() 
 
-// यह JavaScript का एक method है जो किसी Date object को string में बदल देता है।
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// लेकिन यह method locale (जैसे en-US, hi-IN) या options (जैसे weekday: "long") को accept नहीं करता।
+// => यह JavaScript का एक method है जो किसी Date object को string में बदल देता है।
+
+// => लेकिन यह method locale (जैसे en-US, hi-IN) या options (जैसे weekday: "long") को accept नहीं करता।
 
 // मतलब: आप इसमें language या formatting options पास नहीं कर सकते।
 
+// +++++++++++++++++++++++++++++++++++++++++++++
 // VS Code IntelliSense:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// जब आप VS Code में code लिखते हो, तो IntelliSense आपको method की signature (यानी method कैसे use होता है) दिखाता है।
+// => जब आप VS Code में code लिखते हो, तो IntelliSense आपको method की signature (यानी method कैसे use होता है) दिखाता है।
 
-// toString() की signature में कोई parameter नहीं होता, इसलिए VS Code आपको locale या options suggest नहीं करेगा।
+// => toString() की signature में कोई parameter नहीं होता, इसलिए VS Code आपको locale या options suggest नहीं करेगा।
 
+// +++++++++++++++++++++++++++++++++++++++++++++
 // Parser Error:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// अगर आप गलती से toString("en-US") जैसा कुछ लिखोगे, तो parser (JavaScript compiler) इसे गलत समझेगा और error देगा।
+// => अगर आप गलती से toString("en-US") जैसा कुछ लिखोगे, तो parser (JavaScript compiler) इसे गलत समझेगा और error देगा।
 
-// क्योंकि यह method incomplete object की तरह दिखेगा (क्योंकि इसमें extra parameters नहीं होने चाहिए)।
+// => क्योंकि यह method incomplete object की तरह दिखेगा (क्योंकि इसमें extra parameters नहीं होने चाहिए)।
 
+// ++++++++++++++++++++++++++++++++++
 // सही तरीका:
-// अगर आपको locale और options के साथ date format करना है, तो toLocaleString(), toLocaleDateString(), या toLocaleTimeString() use करो:
+// ++++++++++++++++++++++++++++++++++
 
-*/
+// => अगर आपको locale और options के साथ date format करना है, तो toLocaleString(), toLocaleDateString(), या toLocaleTimeString() use करो:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++
+*/ // => LineNO: 103
+// ++++++++++
 
-// Eg:
+// +++++++++
+/* // => LineNO: 148
+// +++++++++
 
-/*
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Another Example: Using .toLocaleDateString('locale', {options})
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 const customDate2 = todayDate.toLocaleDateString('en-US', {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
 })
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 console.log("Our customized Date2 is =>",customDate2);
 // Output => Our customized Date2 is => Wednesday, February 11, 2026.
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 // Earlier Output was => console.log(todayDate.toLocaleDateString);
 // Earlier Output =>  2/11/2026.
+
 // => Here while dispaying Dates, it was January = 1, February = 2, March = 3 … December = 12.
 
-*/
+// ++++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++
+*/ // => LineNO: 148
+// ++++++++++
 
+// ++++++++++
+/* // => LineNO: 181
+// ++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
 // In JS, we can also create a Date object using the Date constructor with => "specific date and time". Eg:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-/*
 const specificDate = new Date(2022, 0, 15, 10, 30, 0); 
 // IMP Note => Here, January is month Zero (0).[Internal Method]
 console.log("Specific Date is =>",specificDate);
 // Output => Specific Date is => Sat Jan 15 2022 10:30:00 GMT+0000 (Coordinated Universal Time)
-*/
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// We can also create a Date object from a date string. Eg:
+// ++++++++++
+*/ // => LineNO: 181
+// ++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++
+/* // => LineNO: 200
+// ++++++++++++
 
-// Eg: // YYYY-MM-DD Format with TimeZone specified. 
+// +++++++++++++++++++++++++++++++++++++++++++
+// In JavaScript We can also create a Date object from a date string. Eg:
+// +++++++++++++++++++++++++++++++++++++++++++
+// Eg: // YYYY-MM-DD Format with TimeZone specified.
+// ++++++++++++++++++++++++++++++++++++++++++++ 
+
 const dateFromString1 = new Date("2023-05-20T14:30:00"); 
-/*
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 console.log("Date from String1 in YYYY-MM-DD Format is =>",dateFromString1);
 //Output => Date from String1 in YYYY-MM-DD Format is => 2023-05-20T14:30:00.000Z
+
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 console.log("dateFromString1 (in YYYY-MM-DD Format) in .toLocaleString() is =>", dateFromString1.toLocaleString());
 // Output => dateFromString1 (in YYYY-MM-DD Format) in .toLocaleString() is => 5/20/2023, 2:30:00 PM.
 
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 console.log(`The date in YYYY-MM-DD Format is =>`,dateFromString1, `where month is ${dateFromString1.getMonth() + 1} and Date is ${dateFromString1.getDate()} and Year is ${dateFromString1.getFullYear()}`);
 // Output => The date in YYYY-MM-DD Format is => 2023-05-20T14:30:00.000Z where month is 5 and Date is 20 and Year is 2023.
-*/
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-/* IMPORTANT NOTE:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++
+*/ // => LineNO: 200
+// ++++++++++++
+
+// ++++++++++++
+/* // => LineNO: 233
+// ++++++++++++
+
+// ++++++++++++++++++++++++++++++++++++++++++
+// IMPORTANT NOTE:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 // => JavaScript का Date constructor "DD-MM-YYYY" format को नहीं समझता।
 // => तुम्हें "YYYY-MM-DD" या "MM/DD/YYYY" format देना होगा, या फिर string को manually parse करना होगा।
-*/
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// ++++++++++++
+*/ // => LineNO: 233
+// ++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
 // अगर DD-MM-YYYY Format चाहिए, तो तुम्हें या तो:
 // Manually split करके सही format बनाना होगा => Using String Interpolation with BackTicks(` `). Eg:
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-const parts = "20-05-2023".split("-"); // Performing Manually Splitting
+const parts = "20-05-2023".split("-"); 
+// Performing Manually Splitting
 const date3 = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`); 
-// Manually converting into YYYY-MM-DD Format using indexes 2,1 and 0.
-// Using String Interpolation with BackTicks(` `) and placeholders that get replaced with variable values..
+// Manually converting into YYYY-MM-DD Format using indexes 2,1 and 0. => // Using String Interpolation with BackTicks(` `) and placeholders that get replaced with variable values.
+// => Next continues from Line No: 326
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// ++++++++++++
+/* // => LineNO: 263
+// ++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Explanation of Manual Splitting:
+
+// Explanation :
+// Splitting (split("-"))
+
+// "20-05-2023" string को "-" के आधार पर तोड़ा गया।
+
+// Result: ["20", "05", "2023"]
+
+// parts[0] = "20" → Day
+
+// parts[1] = "05" → Month
+
+// parts[2] = "2023" → Year
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Rearranging:
+
+// JavaScript का Date constructor "YYYY-MM-DD" format को reliably समझता है।
+
+// इसलिए तुमने manually "DD-MM-YYYY" को "YYYY-MM-DD" में बदल दिया।
+
+// ${parts[2]}-${parts[1]}-${parts[0]} → "2023-05-20"
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Creating Date Object:
+
+// new Date("2023-05-20") अब JS को सही format में मिला।
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Result: Sat May 20 2023 ... Eg:
+
+// // console.log(`Date in DD-MM-YYYY Format is => ${date3}, where month is ${date3.getMonth() + 1} and Date is ${date3.getDate()} and Year is ${date3.getFullYear()}`);
+// // Output => Date in DD-MM-YYYY Format is => Sat May 20 2023 00:00:00 GMT+0000 (Coordinated Universal Time), where month is 5 and Date is 20 and Year is 2023.
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Key Point:
+// Direct "20-05-2023" देने पर JS Invalid Date देता है क्योंकि "DD-MM-YYYY" format को वो नहीं समझता।
+
+// Splitting करके "YYYY-MM-DD" बनाने से JS उसे सही parse कर लेता है।
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Conclusion:  
+// तुम्हारा splitting code "DD-MM-YYYY" को "YYYY-MM-DD" में बदलने का तरीका है, ताकि JavaScript का parser उसे सही से समझ सके।
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// ++++++++++++
+*/ // => LineNO: 263
+// ++++++++++++ 
+
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 // console.log("Date in DD-MM-YYYY Format is =>", parts);
 // Output => Date in DD-MM-YYYY Format is => [ '20', '05', '2023' ]
 
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Using .toLocaleString() => For readable representation of Date:
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 // console.log("Date in (in DD-MM-YYYY Format) in .toLocaleString() is =>", parts.toLocaleString());
 // Output => Date in (in DD-MM-YYYY Format) in .toLocaleString() is => 20,05,2023
+
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 // console.log(`Date in DD-MM-YYYY Format is => ${date3}, where month is ${date3.getMonth() + 1} and Date is ${date3.getDate()} and Year is ${date3.getFullYear()}`);
 // Output => Date in DD-MM-YYYY Format is => Sat May 20 2023 00:00:00 GMT+0000 (Coordinated Universal Time), where month is 5 and Date is 20 and Year is 2023.
 
-// console.log("Date in DD-MM-YYYY Format is =>", parts, `where month is ${parts.getDate() + 1} and Date is ${parts.getDate()} and Year is ${parts.getFullYear()}`); // ERROR ??????????????????????????
-// Output => 
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++
+/* // => LineNO: 346
+// ++++++++++++
+ 
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Please NOTE:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
-/*
-या तुम्हें Moment.js / Day.js जैसी libraries use करनी होंगी जो "DD-MM-YYYY" format को support करती हैं।
-*/
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// तुम्हें output इस तरह मिल रहा है: 
+// => Sat May 20 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
+// और तुम सोच रहे हो कि यह "Sat 20 May 2023 ..." क्यों नहीं दिखा रहा।
 
-// Eg: => MM/DD/YYYY Format  
+// +++++++++++++++++++++++++++++++++++++++++++++
+// कारण:
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// JavaScript का Date.prototype.toString() method एक fixed format में date को string में बदलता है। 
+// इसका default format है:
+// => DayOfWeek Month Day Year HH:MM:SS GMT+Offset (TimeZone)
+// यानी हमेशा Month पहले आता है, फिर Day.
+// इसलिए तुम्हें "Sat May 20 2023 ..." दिख रहा है, न कि "Sat 20 May 2023 ...".
+// +++++++++++++++++++++++++++++++++++++++++++++
+// अगर तुम्हें Custom Format चाहिए, तो =>
+// => JavaScript का default toString() format तो बदल नहीं सकता।
+// => लेकिन तुम toLocaleDateString() या libraries (जैसे Day.js, Moment.js) use करके format customize कर सकते हो:
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 346
+// +++++++++++
+
+// +++++++++++
+/* // => LineNO: 377
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+// ERROR Example ????????
+// +++++++++++++++++++++++++++++++++++++++++++++
+// // console.log("Date in DD-MM-YYYY Format is =>", parts, `where month is ${parts.getDate() + 1} and Date is ${parts.getDate()} and Year is ${parts.getFullYear()}`); 
+// Output => ERROR ????????
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 377
+// +++++++++++
+
+// +++++++++++
+/* // => LineNO: 392
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+//Explanation:
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Error का कारण:
+
+// parts एक array है: ["20", "05", "2023"]
+
+// Array पर getDate(), getMonth(), getFullYear() जैसे methods exist नहीं करते।
+
+// ये methods सिर्फ Date object पर काम करते हैं।
+
+// इसलिए जब तुम parts.getDate() लिखते हो, JS कहता है → TypeError: parts.getDate is not a function.
+// +++++++++++++++++++++++++++++++++++++++++++++
+// सही तरीका:
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// तुम्हें date3 (जो कि Date object है) पर methods call करने चाहिए, न कि parts पर:
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Conclusion:
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Error इसलिए आया क्योंकि तुमने parts (array) पर Date methods call किए।
+
+// सही result पाने के लिए हमेशा date3 (Date object) पर methods call करो।
+
+// +++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 392
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++
+// => या तुम्हें Moment.js / Day.js जैसी libraries use करनी होंगी जो "DD-MM-YYYY" format को support करती हैं।
+// +++++++++++++++++++++++++++++++++++++++++++
+
+// Another Eg: in => MM/DD/YYYY Format  
 const dateFromString2 = new Date("05/20/2023"); 
 
 console.log("Date from String2 in MM/DD/YYYY Format is =>",dateFromString2);
 // Output => Date from String2 in MM/DD/YYYY Format is => 2023-05-20T00:00:00.000Z
 
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Using .toLocaleString() => For readable representation of Date:
+// +++++++++++++++++++++++++++++++++++++++++++++
+
 console.log("dateFromString2 (in MM/DD/YYYY Format) in .toLocaleString() is =>", dateFromString2.toLocaleString());
 // Output => dateFromString2 (in MM/DD/YYYY Format) in .toLocaleString() is => 5/20/2023, 12:00:00 AM
 
+// +++++++++++++++++++++++++++++++++++++++++++++
 // We can also use here String Interpolation with BackTicks (` `) and placeholders that get replaced with variable values, for more clear understanding of date. Eg:
+// +++++++++++++++++++++++++++++++++++++++++++++
 
 console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month is ${dateFromString2.getMonth() + 1} and Date is ${dateFromString2.getDate()} and Year is ${dateFromString2.getFullYear()}`)
 // Output => The date in MM/DD/YYYY Format is => 2023-05-20T00:00:00.000Z where month is 5 and Date is 20 and Year is 2023
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++
 
-/* IMPORTANT NOTE:
+// +++++++++++
+/* // => LineNO: 454
+// +++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++
+// IMPORTANT NOTE:
+// ++++++++++++++++++++++++++++++++++++++++++++
 
 // JavaScript का Date constructor string को parse करने के लिए कुछ ही formats को reliably support करता है:
 
@@ -231,13 +475,16 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 // हमेशा "YYYY-MM-DD" (ISO) या "MM/DD/YYYY" (slashes वाला US format) दो।
 
 // अगर तुम्हें custom format चाहिए, तो string को manually parse करो।
-*/
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++
 
+// +++++++++++
+*/ // => LineNO: 454
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++
 // IMPORTANT NOTE:
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++
 
 // => JavaScript में Date objects के साथ काम करते समय, हमेशा ध्यान रखें कि month index 0 से शुरू होता है (0 = January, 1 = February, ..., 11 = December)।
 
@@ -257,6 +504,8 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 // वरना आपको "DD-MM-YYYY" या "MM-DD-YYYY" को manually "YYYY-MM-DD" format में बदलना पड़ेगा (जो सबसे reliable है), या फिर खुद string को manually parse करना पड़ेगा।
 // तभी आप सही date, month, year और timezone values निकाल पाओगे।
 
+// Conclusion:
+
 // JavaScript का native Date constructor "YYYY-MM-DD" (ISO format) और "MM/DD/YYYY" (US format) को reliably समझता है।
 
 // "DD-MM-YYYY" format को यह बिल्कुल नहीं समझता।
@@ -265,11 +514,16 @@ console.log(`The date in MM/DD/YYYY Format is =>`,dateFromString2, `where month 
 
 // "MM-DD-YYYY" → कभी-कभी काम करता, लेकिन unreliable है, इसे avoid करना चाहिए।
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+/* // => LineNO: 520
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++
 
 // We can also compare two Date objects using comparison operators like <, >, <=, >=, ==, ===, etc. Eg:
 
-/*
 const dateA = new Date("2023-01-01");
 const dateB = new Date("2023-12-31");
 
@@ -277,13 +531,21 @@ console.log("Is dateA < dateB?", dateA < dateB); // Output => true
 console.log("Is dateA > dateB?", dateA > dateB); // Output => false
 console.log("Is dateA == dateB?", dateA == dateB); // Output => false (compares references)
 console.log("Is dateA === dateB?", dateA === dateB); // Output => false (compares references)
-*/
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++
 
+// +++++++++++
+*/ // => LineNO: 520
+// +++++++++++
+
+// +++++++++++
+/* // => LineNO: 542
+// +++++++++++
+
+// ++++++++++++++++++++++++++++++++++++++++++
 // In JS we can also compare two Date objects using getTime() method which returns the number of milliseconds since the epoch. Eg:
+// +++++++++++++++++++++++++++++++++++++++++++
 
-/*
 let nowDate = new Date() // Gives us the current date and time.
 let let myCreatedDate = new Date("01-14-2023");
 let myTimeStamp = Date.now();
@@ -306,43 +568,74 @@ if (myCreatedDate.getTime() < nowDate.getTime()) {
 }
 // Output => myCreatedDate is in the past.
 // Here this .getTime() method converts both date objects into their respective timestamps in milliseconds since the epoch, and then we can easily compare these timestamps to determine if one date is in the past, future, or the same as the other date.
-*/
+// +++++++++++++++++++++++++++++++++++++++++++
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++
+*/ // => LineNO: 542
+// +++++++++++
 
+// +++++++++++
+/* // => LineNO: 578
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++
 
 // We can also get the current timestamp (milliseconds since the epoch) using Date.now(). Eg:
 
-/*
 const currentTimestamp = Date.now();
 console.log("Current Timestamp is =>",currentTimestamp);
 // Output => Current Timestamp is => 1707671444000
-*/
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 578
+// +++++++++++
+
+// +++++++++++
+/* // => LineNO: 596
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++
 
 // We can also get individual components of a date using methods like getFullYear(), getMonth(), getDate(), etc. Eg:
 
-/*
 console.log("Year is =>",todayDate.getFullYear()); // Output => Year is => 2026
 console.log("Month is =>",todayDate.getMonth()); // Output => Month is => 1 (February, since months are zero-indexed)
 console.log("Date is =>",todayDate.getDate()); // Output => Date is => 11
-*/
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 596
+// +++++++++++
+
+// +++++++++++
+/* // => LineNO: 614
+// +++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++
 
 // We can also set individual components of a date using methods like setFullYear(), setMonth(), setDate(), etc. Eg:
 
-/*
 todayDate.setFullYear(2025);
 todayDate.setMonth(11); // December
 todayDate.setDate(25);
 console.log("Updated Date is =>",todayDate);
 // Output => Updated Date is => Thu Dec 25 2025 14:10:44 GMT+0000 (Coordinated Universal Time)
-*/      
 
-// +++++++++++++++++(That's it for Today)++++++++++++++++++++++++++++
-// +++++++++++++(We will meet soon with Next Concept)+++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++
+*/ // => LineNO: 614
+// +++++++++++  
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++(That's it for Today)+++++++++++++
+// +++++(We will meet soon with Next Concept)+++++
+// +++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
