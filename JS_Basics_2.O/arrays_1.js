@@ -225,7 +225,7 @@ console.log("type of myn2 Array after splicing =>", typeof myn2);
 // 5. Manipulates/modifies ✅ original array.
 // 6. splice(): Also returns a shallow copy of the removed elements.
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Both slice() and splice() produce shallow copies of the elements they return.
 
@@ -233,7 +233,7 @@ console.log("type of myn2 Array after splicing =>", typeof myn2);
 
 // The critical distinction lies in whether the original array is preserved (slice) or mutated (splice).
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++
 
 // So the final takeaway:
 
