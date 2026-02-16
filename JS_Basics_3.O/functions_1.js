@@ -478,32 +478,11 @@
 // The condition if(!username) checks for falsy values (undefined, null, "", 0, false, NaN).
 // Since "NAME_NOT_PROVIDED" is truthy, i.e. now username parameter actually have some default value, 
 // therefore [ username === undefined ] or [ !username ] evaluates => FALSE and therefore "if block" is skipped.
-// ++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++
 
-// Functions can also have rest parameters
+// +++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++(That's it for Today)++++++++++++++
+// +++++++++++++(To be continued...)++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++
-
-// function sum(...numbers) {
-//     return numbers.reduce((total, num) => total + num, 0);
-// }
-// console.log(sum(1, 2, 3)); // Output: 6
-// console.log(sum(4, 5)); // Output: 9
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++
-
-// Functions can be used as methods in objects:
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++
-
-// const person = {
-//     name: 'Alice',
-//     greet() {
-//         return `Hello, my name is ${this.name}!`;
-//     }
-// };
-// console.log(person.greet()); // Output: Hello, my name is Alice!
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++
-
-// In summary, functions in JavaScript are versatile and can be used in various ways to create reusable and modular code.
+// +++++++++++++++++++++++++++++++++++++++++++++++
