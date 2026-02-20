@@ -182,6 +182,7 @@ const variableName = function (parameter) {
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+/*
 const chai = function () {
     let username = "hitesh"
     console.log(this); // Lots and lots of properties.
@@ -189,14 +190,15 @@ const chai = function () {
     //=> It implies here in a function (Expression) => "chai()", "this" keyword couldn't fetch the value of "username" from the current context.
 
 }
+*/
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-chai () // Calling and Executing Function
+// chai () // Calling and Executing Function
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-console.log(this); // Outside the Scope of Function (Expression)
+// console.log(this); // Outside the Scope of Function (Expression)
 // Output:=> {} => Empty Object.
 
 // +++++++++++++++++++++++++++++++++++++++++
@@ -236,11 +238,12 @@ Object [global] {
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+const chai =  () => {
+    let username = "hitesh"
+    console.log(this);
+}
 
-
-
-
-
+// chai()
 
 // +++++++++++++++++++++++++++++++++++++++++
 
