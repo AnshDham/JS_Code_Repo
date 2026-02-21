@@ -234,137 +234,142 @@ Object [global] {
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-// Concept of ()=> "ARROW FUNCTION" <=(). 
+// Concept of ARROW FUNCTION: "() => {}".  
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// Arrow Function is just another way of declaring Functions in JavaScript, 
+// where we don't really need to type "Function" keyword along with Paranthesis "( )" to declare a Function,
+// Instead we can simply put an arrow "=>" between the paranthesis "( )" and curly braces "{ }" in order to declare an Arrow Function "() => {}" in JavaScript.
+// Eg: Let us redeclare our "chai() function" as => Arrow Function:
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+/*
 const chai =  () => {
     let username = "hitesh"
     console.log(this);
 }
 
-// chai()
+// chai() // Calling and Executing Arrow Function
+*/
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// In an Arrow Function, we can simply give parameters inside Paranthesis "(paramtr1, paramtr2)", 
+// as we used to give them originally in a function; 
+// Example:
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// const addTwo = (num1, num2) => {
+//     return num1 + num2
+// }
 
-
-
-
-
-
-
-// +++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
+// console.log(addTwo(3, 4))
+// Output => 7.
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-
-
-
-
-
-
+// "Implicit Return Approach" //=> (Important Concept for "REACT.JS")
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// In an Arrow Function, if we define Function body too inside paranthesis "( )", instead of Curly Braces "{ }";
+// We can avoid explicitly writing "return" keyword in that case, 
+// but the function will Still return Same Output, as it originally used to return.
 
+// This approach => Defining Function Body too inside paranthesis "( )", instead of Curly Braces "{ }";
+// also used to called "Implicit return", 
+// where it is self understood to return whatsoever is the output of the function, 
+// and we don't need to use "return" keyword explicitly.
 
+// But please don't forget, if you ever wrap "Function body" inside Curly Braces "{ }", 
+// you have to write "return" keyword "explicitly" in order to avoid an error.
 
+// But if you're using "Implicit Return Approach", 
+// then you don't really need to write "return" keyword explicitly, 
+// and can avoid writing it, since it is self understood.
 
-
-
-
-
-// +++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-
-// +++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-
+// Example:
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-
-
-
-
-
-
+// Defining Function Body too inside paranthesis "( )", instead of Curly Braces "{ }";
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// const addTwo = (num1, num2) => ( num1 + num2 )
 
-
-
-
-
-
+// console.log(addTwo(3, 4))
+// Output => 7.
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-
-
-
-
-
-
-
-
-
-
+// In "Implicit Return" we can define complete function in a same line as well.
+// BUT
+// Sometimes while using Arrow Function, => using Implicit return approach, 
+// => we can define function body without any Brackets as well => [Neither wrapped within Paranthesis Nor within Curly Braces],
+// that too sometimes return the output of the function,
+// But this approach of NOT wrapping function body within any brackets => is not much preferred.
+// Example:
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// const addTwo = (num1, num2) => num1 + num2 
 
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(addTwo(3, 4))
+// Output => 7.
 
 // +++++++++++++++++++++++++++++++++++++++++
 
-
-
-
-
-
-
-
-
-
-
-
-
+// Important Note:
 
 // +++++++++++++++++++++++++++++++++++++++++
 
+// If we're going to define an Object inside Function Body using "Implicit Return Approach",
+// we must have to use CURLY BRACES "{ }" (To define that object), 
+// and that object must should be wrapped inside paranthesis "( )" for Function Body, //=> (IMPORTANT)
+// in order to return it using "Implicit Return Approach";
+// Else it will cause ERROR.
+// Example:
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+// 1. Wrapping object defined in Function Body within paranthesis "( )".
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+// const profile = () => ({username: "hitesh"});
+
+
+// console.log(profile());
+// Output => { username: 'hitesh' }.
+
+// console.log(typeof profile);
+// Output => function.
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+// 2. Object defined in Function Body, without wrapped within paranthesis "( )".
+// Causes => ERROR.
+
+// +++++++++++++++++++++++++++++++++++++++++
+
+// const profile = () => {username: "hitesh"};
+
+
+// console.log(profile());
+// Output => undefined. //=> ERROR.
+
+// console.log(typeof profile);
+// Output => function.
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++(That's it for Today)+++++++++++++++
+// ++++++(We will meet soon with Next Concept)++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
